@@ -57,8 +57,8 @@ let empOne = new Employee('Jess', 'weekday mornings, weekday afternoons')
 
 //CODE HERE
 
-empOne.getSchedule
-console.log(empOne)
+empOne.getSchedule()
+
 
 /*
     Make a copy of the empOne object
@@ -73,8 +73,16 @@ console.log(empOne)
 */
 
 //CODE HERE
+//     ...  is the spread operator!!!!!!!!
+//since empOne is an object you want to use curly brackets to run ... 
 
-let empTwo = new Employee('Nick', "weekday mornings, weekday afternoons")
+//   {...}
+
+const empTwo = {...empOne}
+empTwo.name = 'Nick' // dot notation to change name
+console.log(empTwo) //to check
+
+
 
 
 
@@ -106,18 +114,17 @@ let empTwo = new Employee('Nick', "weekday mornings, weekday afternoons")
 class Manager extends Employee {
     constructor(name, shifts, employees){
         super(name, shifts)
-        this.employees = [employees]
+        this.employees = employees
     }
     getEmployees(){
         console.log(`${this.name} manages ${this.employees}`)
     }
-    addEmployee(){
-        this.employees.push
+    addEmployee(emp){
+        this.employees.push(emp)
     }
 }
 
-
-
+//super makes sure that the extended class has all the values from the class that came before it
 /*
     Create a new instance of your class.
     Save it to a variable called `manager`.
@@ -131,9 +138,9 @@ class Manager extends Employee {
 
 //CODE HERE
 
-let manager = new Manager('Winston', 'weekday mornings, weekday afternoons', 'Cece and Schmit')
+let manager = new Manager('Winston', 'weekday mornings, weekday afternoons', ['Cece', 'Schmit'])
 
-
+//this is where you define the push as an ARRAY^^^
 
 /*
     Call the `getEmployees` method on the
@@ -142,8 +149,8 @@ let manager = new Manager('Winston', 'weekday mornings, weekday afternoons', 'Ce
 
 //CODE HERE
 
-manager.getEmployees
-console.log(manager)
+manager.getEmployees()
+
 
 /*
     Call the `addEmployee` method on the 
@@ -154,7 +161,7 @@ console.log(manager)
 //CODE HERE 
 
 manager.addEmployee('Coach')
-console.log(manager)
+
 
 /*
     Call the `getEmployees` method on the
@@ -163,5 +170,4 @@ console.log(manager)
 */
 
 //CODE HERE
-manager.getEmployees
-console.log(manager)
+manager.getEmployees()
