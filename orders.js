@@ -36,17 +36,17 @@ class Ticket {
     this.items = items
     this.orderTime = orderTime
     this.customerId =customerId
+    this.status = 'queued'
 
 }
- status = "queued"
-
-updateStatus() {
-    this.status = "confirmed"
-    console.log(`the order for the customer ${customerId} is now ${status}`)
+updateStatus(newStatus) {
+    this.status = newStatus
+    console.log(`the order for the customer ${this.customerId} is now ${this.status}`)
 }
 }
 
-
+//was super close just needed to add the parameter of newStatus to the method
+//and put this.status in the right place = the string 'queued'
 
 
 /*
@@ -62,6 +62,10 @@ updateStatus() {
 
 //CODE HERE
 
+const firstTicket = new Ticket(['pizza', 'bread', 'soda'], '7:15', 575)
+//the first parameter of the items could also be a string 
+console.log(firstTicket)
+
 
 /*
     Call the `updateStatus` method on
@@ -70,3 +74,5 @@ updateStatus() {
 */
 
 //CODE HERE
+
+ firstTicket.updateStatus('cooking')
