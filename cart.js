@@ -35,7 +35,9 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+ const summedPrice = cart.reduce((total, current) => total + current.price, 0)
+ console.log(summedPrice)
+//dont for the starting value! 0
 
 
 //////////////////PROBLEM 2////////////////////
@@ -54,6 +56,19 @@ const cart = [
 */
 
 //CODE HERE
+
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    const totalBeforeCoupon = cartTotal * (1 + tax)
+    const finalPrice = totalBeforeCoupon - couponValue
+
+    return finalPrice
+}
+
+
+console.log(calcFinalPrice(summedPrice, 5, .06))
+//taking in summedPrice from the previous problem 
+console.log(calcFinalPrice(40, 5, .06))
+//or you can add all new numbers if you didnt have a summedPrice beforehand
 
 
 
@@ -88,3 +103,15 @@ const cart = [
 */
 
 //CODE HERE
+
+
+// a model would be spelling out how to make an object
+
+
+const firstCustomer = {
+    firstName: 'Josh',
+    lastName: 'Hobson',
+    address: '123 Main St.',
+    city: 'Albuquerque',
+    phonenumber: 5055555555
+}

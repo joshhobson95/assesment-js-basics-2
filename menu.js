@@ -260,6 +260,7 @@ const filterByProperty = (property, number, type) => {
             return food[property] <= number
         }
     })
+    return filteredFood
 }
 
 
