@@ -189,6 +189,9 @@ let foodArr = [
 
 //CODE HERE
 
+const filterByProperty = (property, number, type);
+
+
 
 /*
     Invoke the `filterByProperty` function passing
