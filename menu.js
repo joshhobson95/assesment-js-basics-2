@@ -114,7 +114,20 @@ console.log(category)
 
 //CODE HERE
 
+let foodArr = [
+  {"name": "pasta", "price":10.99, "popularity": 3, "rating": 5, "tags":["gluten", "entree"]},
+  {"name": "pizza", "price":9.99, "popularity": 2, "rating": 4, "tags":["meat", "entree"]},
+  {"name": "salad", "price":5.99, "popularity": 1, "rating": 3, "tags":["vegeterian", "side"]},
+  {"name": "soda", "price":2.99, "popularity": 4, "rating": 2, "tags":["drink", "sugar"]},
+  {"name": "calzone", "price":8.99, "popularity": 5, "rating": 1, "tags":["best", "entree"]}
+ 
+  
 
+
+]
+
+  
+  
 
 //////////////////PROBLEM 4////////////////////
 /* 
@@ -130,7 +143,10 @@ console.log(category)
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+
+
+ const filteredFood = foodArr.filter(tag => tag.new)
+ console.log(filteredFood)
 
 
 
