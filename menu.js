@@ -32,6 +32,18 @@
 
 //CODE HERE
 
+let pizza = {
+    name: "pizza1",
+    price: 14.99,
+    category: "entree",
+    popularity: 1,
+    rating: 5,
+    tags: ["meat", "popular", "discounted"]
+}
+
+
+
+
 
 
 //////////////////PROBLEM 2////////////////////
@@ -44,6 +56,8 @@
 
 //CODE HERE
 
+console.log(pizza.popularity)
+
 
 /*
     Second, log the second tag in your pizza's
@@ -53,6 +67,9 @@
 */
 
 //CODE HERE
+console.log(pizza.tags[0])
+console.log(pizza.tags[1])
+console.log(pizza['tags'])
 
 
 /*
@@ -64,6 +81,11 @@
 
 //CODE HERE
 
+let {price} = pizza
+let newprice = pizza.price = 12.99
+
+console.log(newprice)
+
 
 /*
     Fourth, and last, destructure the category
@@ -74,6 +96,9 @@
 
 //CODE HERE
 
+let {category} = pizza
+
+console.log(category)
 
 //////////////////PROBLEM 3////////////////////
 /* 
