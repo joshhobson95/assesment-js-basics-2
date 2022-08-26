@@ -67,9 +67,16 @@ console.log(pizza.popularity)
 */
 
 //CODE HERE
+
+
+
 console.log(pizza.tags[0])
 console.log(pizza.tags[1])
+
+
 console.log(pizza['tags'])
+//no brakcet notation
+
 
 
 /*
@@ -85,6 +92,9 @@ let {price} = pizza
 let newprice = pizza.price = 12.99
 
 console.log(newprice)
+
+//only needed 
+let {price1} = pizza
 
 
 /*
@@ -123,6 +133,50 @@ let foodArr = [
 
 
 ]
+// started with the array below but updated it to be like one above to try and match the PokemonGo examples on the Lab
+const foodArr1 = [
+    {
+        name: 'pizza', 
+        price: 9.99, 
+        category: 'entree', 
+        popularity: 1, 
+        rating: 4.7, 
+        tags: ['customer favorite', 'kids', 'gluten-free option']
+    }, 
+    {
+        name: 'pasta', 
+        price: 8.99, 
+        category: 'entree', 
+        popularity: 3, 
+        rating: 4.8, 
+        tags: ['customer favorite']
+    }, 
+    {
+        name: 'salad', 
+        price: 7.99, 
+        category: 'side', 
+        popularity: 4, 
+        rating: 4.4, 
+        tags: ['gluten-free option']
+    }, 
+    {
+        name: 'cookie', 
+        price: 2.99, 
+        category: 'dessert', 
+        popularity: 2, 
+        rating: 5.0, 
+        tags: ['customer favorite', 'kids']
+    }, 
+    {
+        name: 'breadsticks', 
+        price: 6.99, 
+        category: 'side', 
+        popularity: 5, 
+        rating: 4.6, 
+        tags: ['customer favorite', 'kids']
+    }
+]
+
 
   
   
@@ -141,10 +195,19 @@ let foodArr = [
 
 //CODE HERE
 
-
-
+//what i did first, but recall it working
  const filteredFood = foodArr.filter(name => name.tags.includes("drink"))
+console.log(filteredFood)
+//yup this still works was the one line example
+
+ const filteredFood1 = foodArr1.filter((name) => {
+    if(name.tags.includes('kids')){
+        return name
+    }
+ })
  console.log(filteredFood)
+ //basically does that same thing but has an if statment
+//my method worked fine though
 
 
 
@@ -189,9 +252,22 @@ let foodArr = [
 
 //CODE HERE
 
-const filterByProperty = (property, number, type);
+const filterByProperty = (property, number, type) => {
+    const filteredFood1 = foodArr1.filter((food) => {
+        if(type === 'above'){
+            return food[property] >= number
+        }else{
+            return food[property] <= number
+        }
+    })
+}
 
 
+
+//you also need two parathesis after foodArr1.filter because it takes in a parameter and need to contain the if statement that if part of looping things over as a .filter does
+
+//this is set up so you can pass in price above 5
+//and also use it and pass in popularity below 7
 
 /*
     Invoke the `filterByProperty` function passing
@@ -201,3 +277,15 @@ const filterByProperty = (property, number, type);
 */
 
 //CODE HERE
+
+
+console.log(filterByProperty('popularity', 3, 'below'))
+
+//here we can actually pass in value to use the function above 
+
+
+//populatiry chooses the thing to search the number for
+// we want things that are below 3
+//defined above and below was defined in the instructions. 
+
+//still getting undefined though...????
