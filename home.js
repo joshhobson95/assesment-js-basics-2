@@ -30,6 +30,8 @@ greetUser('Andrew')
 
 
 
+//with one parameter you technically dont need the parathesis line 26
+
 
 
 //////////////////PROBLEM 2////////////////////
@@ -66,11 +68,26 @@ const canWeDeliver = (zipcode) => {
   
 }
 
-//THIS is only working for the first zipcode have no idea why
+console.log(canWeDeliver(45645))
 
 
-console.log(canWeDeliver(85205))
 
+const canWeDeliver1 = (zipCode) => {
+    for(let i = 0; i < deliveryAreaZipCodes.length; i++){
+        if(deliveryAreaZipCodes[i] === zipCode){
+            return "You're in our delivery zone!"
+        }
+    } 
+        return "Sorry, we cant deliver to this address!"
+}
+
+//return outside the for loop
+
+//so so close
+//return will break the loop and it will not check the rest of the numbers in the array. having the return outside the for loop was all i needed.
+//return is always the last line of code that will ever run
+
+console.log(canWeDeliver1(85206))
 
 
     
@@ -142,9 +159,22 @@ const deals = [
 
 //CODE HERE
 
-let title = deals.title = title.replace ("15", "10")
 
-console.log(title)
+console.log(deals[0].title)
+
+//so the array posotion goes first deal[0] and you can use dot notation to get just the title piece of deals[0] // consoleloggin 15% off
+
+    //deals[0].title = 'this is my replacement title'
+//now we can reassign  deals[0].title value to something else
+    //console.log(deals[0].title)
+//now the console log is the exactly same but the value of deal[0].title has now been updated to a new value and // now console logs 'this is my replacement value' 
+
+deals[0].title = deals[0].title.replace('15%', '10%')
+
+//now you can do the exact same thing as above but adding .replace command to find where deals[0].title has the value of '15%' and replace it with '10%'
+
+console.log(deals[0].title)
+
 /*
     The restaurant is going to continue its
     family deal for another month. 
@@ -161,3 +191,18 @@ console.log(title)
 //CODE HERE
 
 
+
+console.log(deals[1].desc)
+
+deals[1].desc = deals[1].desc.replace('March', 'April')
+
+console.log(deals[1].desc)
+//same as above just acessing desc and the [1] of the array
+
+
+
+deals[1].desc = deals[1].desc.trim().replace('March', 'April')
+
+//then we have to use .trim() to take out any whitespace
+
+console.log(deals[1].desc)
