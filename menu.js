@@ -120,8 +120,6 @@ let foodArr = [
   {"name": "salad", "price":5.99, "popularity": 1, "rating": 3, "tags":["vegeterian", "side"]},
   {"name": "soda", "price":2.99, "popularity": 4, "rating": 2, "tags":["drink", "sugar"]},
   {"name": "calzone", "price":8.99, "popularity": 5, "rating": 1, "tags":["best", "entree"]}
- 
-  
 
 
 ]
@@ -145,7 +143,7 @@ let foodArr = [
 
 
 
- const filteredFood = foodArr.filter(tag => tag.new)
+ const filteredFood = foodArr.filter(name => name.tags.includes("drink"))
  console.log(filteredFood)
 
 
